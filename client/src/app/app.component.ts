@@ -35,11 +35,11 @@ export class AppComponent implements OnInit {
 
   //testing azure deployments
 
-  login(): void {
-    this.auth.loginWithRedirect(); // only redirect
-  }
+  // login(): void {
+  //   this.auth.loginWithRedirect(); // only redirect
+  // }
 
-  logout(): void {
-    this.auth.logout({ logoutParams: { returnTo: window.location.origin } });
-  }
+  // logout(): void {
+  //   this.auth.logout({ logoutParams: { returnTo: window.location.origin } });
+  // }
 }

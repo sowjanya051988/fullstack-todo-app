@@ -7,7 +7,6 @@ const routes: Routes = [
   {
     path: 'todos',
     component: TodoListComponent,
-    canActivate: [AuthGuard],  // protect this route so only logged-in users access
   },
   {
     path: '', 

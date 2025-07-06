@@ -1,5 +1,5 @@
-<button class="primary" *ngIf="!(auth.isAuthenticated$ | async)" (click)="login()">Login</button>
-<button class="primary" *ngIf="auth.isAuthenticated$ | async" (click)="logout()">Logout</button> <!-- ✅ call logout method -->
+<!-- <button class="primary" *ngIf="!(auth.isAuthenticated$ | async)" (click)="login()">Login</button>
+<button class="primary" *ngIf="auth.isAuthenticated$ | async" (click)="logout()">Logout</button> ✅ call logout method -->
 
 <router-outlet></router-outlet>
 
