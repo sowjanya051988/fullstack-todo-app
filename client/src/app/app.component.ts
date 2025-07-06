@@ -13,24 +13,24 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
-      if (isAuthenticated) {
-        this.auth.getAccessTokenSilently({
-          authorizationParams: {
-            audience: 'https://todoapi'
-          }
-        }).subscribe({
-          next: (token) => {
-            localStorage.setItem('access_token', token);
-            console.log('✅ Access token stored:', token);
-            this.router.navigate(['/todos']);
-          },
-          error: (err) => {
-            console.error('❌ Error getting access token:', err);
-          }
-        });
-      }
-    });
+    // this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
+    //   if (isAuthenticated) {
+    //     this.auth.getAccessTokenSilently({
+    //       authorizationParams: {
+    //         audience: 'https://todoapi'
+    //       }
+    //     }).subscribe({
+    //       next: (token) => {
+    //         localStorage.setItem('access_token', token);
+    //         console.log('✅ Access token stored:', token);
+    //         this.router.navigate(['/todos']);
+    //       },
+    //       error: (err) => {
+    //         console.error('❌ Error getting access token:', err);
+    //       }
+    //     });
+    //   }
+    // });
   }
 
   //testing azure deployments

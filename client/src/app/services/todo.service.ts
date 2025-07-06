@@ -10,14 +10,14 @@ export class TodoService {
   constructor(private http: HttpClient) {}
 
   getTodos(): Observable<Todo[]> {
-    const token = localStorage.getItem('access_token');
-    if (!token) {
-      throw new Error('No access token found');
-    }
+    // const token = localStorage.getItem('access_token');
+    // if (!token) {
+    //   throw new Error('No access token found');
+    // }
 
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    // const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-    return this.http.get<Todo[]>(this.apiUrl, { headers }).pipe(
+    return this.http.get<Todo[]>(this.apiUrl).pipe(
       map(todos =>
         todos.map(todo => ({
           ...todo,
