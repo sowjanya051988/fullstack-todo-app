@@ -1,0 +1,27 @@
+<div *ngIf="errorMessage" class="bg-red-100 text-red-800 px-4 py-2 rounded-md shadow mb-4 max-w-md mx-auto">
+  {{ errorMessage }}
+</div>
+
+<!-- todo list -->
+<div *ngIf="todos.length > 0; else noTodos" class="min-h-screen bg-pink-100 flex items-center justify-center">
+  <ul class="bg-white rounded-xl shadow-md p-6 w-full max-w-md space-y-4">
+    <li *ngFor="let todo of todos" class="flex items-center gap-3 p-3 border border-gray-200 rounded-md hover:bg-gray-50 transition">
+      <input
+        type="checkbox"
+        [checked]="todo.isCompleted"
+        disabled
+        class="form-checkbox h-5 w-5 text-pink-600 rounded-md"
+      />
+      <span [class.line-through]="todo.isCompleted" class="text-gray-800">
+        {{ todo.title }}
+      </span>
+    </li>
+  </ul>
+</div>
+
+<!-- empty state -->
+<ng-template #noTodos>
+  <div class="min-h-screen bg-pink-100 flex items-center justify-center">
+    <p class="text-gray-700 text-lg">🎉 No todos to show.</p>
+  </div>
+</ng-template>
